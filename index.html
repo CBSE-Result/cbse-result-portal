@@ -34,7 +34,7 @@
         </div>
     </section>
 
-   <form id="resultForm" onsubmit="showResult(event)">
+   <form id="resultForm" onsubmit="goToResult(event)">
         <div class="form-horizontal">
             <section class="searchResultSection">
                 <div class="container">
@@ -137,21 +137,16 @@
     </section>
 
     <div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div> 
-  <script>
-function showResult(event) {
-  event.preventDefault(); // stop form from submitting
-
-  // Get roll number value (you can use this later to fetch specific result)
+<script>
+function goToResult(event) {
+  event.preventDefault();
   const roll = document.getElementById("txtRollno").value.trim();
-
-  if (roll === "") {
-    alert("Please enter your Roll Number");
-    return;
+  if (roll) {
+    window.location.href = `result.html?roll=${roll}`;
+  } else {
+    alert("Please enter your Roll Number.");
   }
-
-  // Redirect to result.html and pass roll as query string
-  window.location.href = `result.html?roll=${encodeURIComponent(roll)}`;
 }
-</script>  
+</script>
 </body>
 </html>
