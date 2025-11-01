@@ -34,7 +34,7 @@
         </div>
     </section>
 
-    <form action="path/to/CBSE10thLogin" method="post" novalidate="novalidate">
+   <form id="resultForm" onsubmit="showResult(event)">
         <div class="form-horizontal">
             <section class="searchResultSection">
                 <div class="container">
@@ -136,6 +136,22 @@
         </div>
     </section>
 
-    <div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div>
+    <div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div> 
+  <script>
+function showResult(event) {
+  event.preventDefault(); // stop form from submitting
+
+  // Get roll number value (you can use this later to fetch specific result)
+  const roll = document.getElementById("txtRollno").value.trim();
+
+  if (roll === "") {
+    alert("Please enter your Roll Number");
+    return;
+  }
+
+  // Redirect to result.html and pass roll as query string
+  window.location.href = `result.html?roll=${encodeURIComponent(roll)}`;
+}
+</script>  
 </body>
 </html>
