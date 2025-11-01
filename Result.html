@@ -1,59 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Result - CBSE 2026</title>
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    body {
-      background-color: #f3f6f9;
-      font-family: Arial, sans-serif;
-    }
-    .result-container {
-      max-width: 700px;
-      margin: 50px auto;
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    }
-    h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #003366;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    th, td {
-      padding: 10px;
-      text-align: center;
-      border: 1px solid #ddd;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CBSE Result Form</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="result-container">
-    <h2>Secondary School Examination (Class X) Results 2026</h2>
-    <div id="resultBox">Fetching result...</div>
-  </div>
+    <div class="container">
+        <header>
+            <img src="cbse_logo.png" alt="CBSE Logo" class="logo">
+            <h1>Central Board of Secondary Education</h1>
+            <p>Secondary School Examination (Class X) 2026</p>
+        </header>
+        <div class="form-section">
+            <label for="rollNo">Roll No:</label>
+            <input type="text" id="2509621" name="2509621"><br>
 
-  <script>
-    const sheetURL = "PASTE_YOUR_CSV_LINK_HERE"; // <-- Step 2 link
+            <label for="candidateName">Candidate Name:</label>
+            <input type="text" id="Manav jethloja" name="Manav jethloja"><br>
 
-    const params = new URLSearchParams(window.location.search);
-    const roll = params.get("roll");
+            <label for="motherName">Mother's Name:</label>
+            <input type="text" id="motherName" name="motherName"><br>
 
-    fetch(sheetURL)
-      .then(res => res.text())
-      .then(csv => {
-        const rows = csv.split("\n").map(r => r.split(","));
-        const headers = rows[0];
-        const data = rows.slice(1);
-        const student = data.find(row => row[0].trim() === roll);
-        if (student) {
-          const resultHTML = `
-            <table class="table table-bordered">
-              <tr><th>Roll</th><td>${student[0]}</td></tr>
-              <tr><th>Name</th><td>${student[1
+            <label for="fatherName">Father's Name:</label>
+            <input type="text" id="fatherName" name="fatherName"><br>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="text" id="dob" name="dob"><br>
+
+            <label for="schoolName">School's Name:</label>
+            <input type="text" id="schoolName" name="schoolName"><br>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>SUB CODE</th>
+                    <th>SUB NAME</th>
+                    <th>THEORY</th>
+                    <th>IA / PRACTICAL</th>
+                    <th>TOTAL</th>
+                    <th>POSITIONAL GRADE</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>184</td>
+                    <td>ENGLISH LNG & LIT.</td>
+                    <td><input type="text" value="062"></td>
+                    <td><input type="text" value="020"></td>
+                    <td><input type="text" value="082"></td>
+                    <td><input type="text" value="B1"></td>
+                </tr>
+                <tr>
+                    <td>085</td>
+                    <td>HINDI COURSE-B</td>
+                    <td><input type="text" value="054"></td>
+                    <td><input type="text" value="020"></td>
+                    <td><input type="text" value="074"></td>
+                    <td><input type="text" value="C2"></td>
+                </tr>
+                <tr>
+                    <td>241</td>
+                    <td>MATHEMATICS BASIC</td>
+                    <td><input type="text" value="056"></td>
+                    <td><input type="text" value="020"></td>
+                    <td><input type="text" value="076"></td>
+                    <td><input type="text" value="B1"></td>
+                </tr>
+                <tr>
+                    <td>086</td>
+                    <td>SCIENCE</td>
+                    <td><input type="text" value="050"></td>
+                    <td><input type="text" value="020"></td>
+                    <td><input type="text" value="070"></td>
+                    <td><input type="text" value="B1"></td>
+                </tr>
+                <tr>
+                    <td>087</td>
+                    <td>SOCIAL SCIENCE</td>
+                    <td><input type="text" value="064"></td>
+                    <td><input type="text" value="020"></td>
+                    <td><input type="text" value="084"></td>
+                    <td><input type="text" value="B1"></td>
+                </tr>
+                <tr>
+                    <td colspan="6" class="additional-subject">ADDITIONAL SUBJECT</td>
+                </tr>
+                <tr>
+                    <td>004</td>
+                    <td>PUNJABI</td>
+                    <td><input type="text" value="061"></td>
+                    <td><input type="text" value="020"></td>
+                    <td><input type="text" value="081"></td>
+                    <td><input type="text" value="B2"></td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="result">Result: PASS</p>
+        <button id="printButton">Print this page</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
