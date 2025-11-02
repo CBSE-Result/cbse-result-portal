@@ -104,7 +104,7 @@
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-7 offset-5">
-                                        <input type="submit" id="Submit" value="Submit" class="btn btn-primary" text="">
+                                        <input type="submit" id="SubmitBtn" value="Submit" class="btn btn-primary" text="">
                                         <input type="button" id="Button2" value="Reset" class="btn btn-danger">
                                         <div class="text-danger"></div>
                                     </div>
@@ -138,15 +138,10 @@
 
     <div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div> 
 <script>
-function goToResult(event) {
-  event.preventDefault();
-  const roll = document.getElementById("txtRollno").value.trim();
-  if (roll) {
-    window.location.href = `result.html?roll=${roll}`;
-  } else {
-    alert("Please enter your Roll Number.");
-  }
-}
+document.getElementById("submitBtn").addEventListener("click", function(event) {
+  event.preventDefault(); // Stop the form from reloading the page
+  window.open("result.pdf", "_blank"); // Opens your result PDF in new tab
+});
 </script>
 </body>
 </html>
