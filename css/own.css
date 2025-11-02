@@ -8,10 +8,23 @@ body {
 }
 
 .headertop {
-    background-color:  #00ffff;
-    padding: 5px 0;
+  background-color: #1E90FF !important; /* Lighter CBSE blue */
+  color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
+.headertop img {
+  max-height: 70px;
+}
+
+.headertop a {
+  color: white;
+  text-decoration: none;
+}
+
+.headertop a:hover {
+  text-decoration: underline;
+}
 .logoleft {
     max-width: 150px;
 }
