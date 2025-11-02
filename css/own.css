@@ -8,12 +8,12 @@ body {
 }
 
 .headertop {
-    background-color:  #00FFFF;
-    padding: 6px 0;
+    background-color:  #00ffff;
+    padding: 5px 0;
 }
 
 .logoleft {
-    max-width: 200px;
+    max-width: 150px;
 }
 
 .text-white {
