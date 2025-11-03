@@ -137,27 +137,23 @@
             </div>
         </div>
     </section>
-
     <div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div> 
 <script>
-document.querySelector("form").addEventListener("submit", function(event) {
-  event.preventDefault();
+document.getElementById("Submit").addEventListener("click", function(event) {
+  event.preventDefault(); // Prevent the page from reloading
+  // Get the entered roll number
+  var roll = document.getElementById("txtRollno").value;
 
-  const rollNo = document.getElementById("txtRollno").value.trim();
-  const pdfPath = `results/${rollNo}.pdf`;
-
-  // Check if PDF exists
-  fetch(pdfPath, { method: "HEAD" })
-    .then(response => {
-      if (response.ok) {
-        window.open(pdfPath, "_blank");
-      } else {
-        alert("No result found for this roll number!");
-      }
-    })
-    .catch(() => {
-      alert("Error loading result. Please try again later.");
-    });
+  // Check which student's PDF to open
+  if (roll === "12345678") {
+    window.open("https://cbse-result.github.io/cbse-result-portal/result1.pdf", "_blank");
+  } 
+  else if (roll === "87654321") {
+    window.open("https://cbse-result.github.io/cbse-result-portal/result2.pdf", "_blank");
+  } 
+  else {
+    alert("Invalid roll number! Please try again.");
+  }
 });
 </script>
 </body>
