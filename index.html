@@ -140,9 +140,24 @@
 
     <div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div> 
 <script>
-document.getElementById("Submit").addEventListener("click", function(event) {
-  event.preventDefault(); // Stop default form submission
-  window.open("https://cbse-result.github.io/cbse-result-portal/result.pdf", "_blank"); // Your GitHub Pages PDF URL
+document.querySelector("form").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const rollNo = document.getElementById("txtRollno").value.trim();
+  const pdfPath = `results/${rollNo}.pdf`;
+
+  // Check if PDF exists
+  fetch(pdfPath, { method: "HEAD" })
+    .then(response => {
+      if (response.ok) {
+        window.open(pdfPath, "_blank");
+      } else {
+        alert("No result found for this roll number!");
+      }
+    })
+    .catch(() => {
+      alert("Error loading result. Please try again later.");
+    });
 });
 </script>
 </body>
