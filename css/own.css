@@ -1,91 +1,69 @@
 /* own.css */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f8f9fa;
-    color: #343a40;
 }
+.watermark {
+    color: #d0d0d0;
+    font-size: 250px;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    position: sticky;
+    width: 60%;
+    height: 0vh;
+    margin: 0px auto;
+    z-index: 999;
+    display: flex;
+    font-weight: 600;
+    top: 0.5em;
+    left: 0.5em;
+}
+/* solution 1:*/
+.datepicker {
+    font-size: 14px;
+}
+    /* solution 2: the original datepicker use 20px so replace with the following:*/
 
-/* Header section with soft CBSE blue */
+    .datepicker td, .datepicker th {
+        width: 2em;
+        height: 2em;
+    }
 .headertop {
-    background-color: #22D3D6 !important; /* Light turquoise tone */
-    color: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #00CED1;
+}
+.formdivstyle1 {
+    margin: 0 auto;
+}
+.h5T {
+    color:#3333CC;
+}
+.tableCt {
+    width: 100%;
+    border: thin;
+}
+table .thct {
+    width: 25%;
+    text-align: left;
 }
 
-.headertop img {
-    max-height: 70px;
-}
 
-.headertop a {
-    color: white;
-    text-decoration: none;
-}
+@media print {
+    img {
+        -webkit-print-color-adjust: exact;
+    }
 
-.headertop a:hover {
-    text-decoration: underline;
-}
-
-.logoleft {
-    max-width: 150px;
-}
-
-.text-white {
-    color: #ffffff !important;
-}
-
-/* Form section styling */
-.searchResultSection {
-    margin-top: 50px;
-}
-
-.formdivstyle {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-.control-label {
-    font-weight: 500;
-}
-
-.text-danger {
-    color: #dc3545 !important;
-}
-
-/* Buttons */
-.btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
-}
-
-.btn-primary:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
-}
-
-.btn-danger {
-    background-color: #dc3545;
-    border-color: #dc3545;
-}
-
-.btn-danger:hover {
-    background-color: #c82333;
-    border-color: #bd2130;
-}
-
-/* Footer section */
-.footerfirst {
-    background-color: #343a40;
-    color: #ffffff;
-    padding: 10px 0;
-}
-
-.disclaimer {
-    font-size: 0.9rem;
+    .watermark {
+        color: #d0d0d0;
+        font-size: 250px;
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        position: sticky;
+        width: 60%;
+        height: 0vh;
+        margin: 0px auto;
+        z-index: 999;
+        display: flex;
+        font-weight: 600;
+        top: 0.5em;
+        left: 0.5em;
+    }
 }
